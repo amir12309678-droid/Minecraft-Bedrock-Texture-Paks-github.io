@@ -1,194 +1,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Minecraft PvP Packs 🔥</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft PvP Packs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-    }
+<style>
+body {margin:0;font-family:Arial;background:#0f172a;color:white;}
+header {background:#020617;padding:15px;text-align:center;font-size:22px;font-weight:bold;}
 
-    header {
-      padding: 15px;
-      text-align: center;
-      background: #020617;
-      font-size: 22px;
-      font-weight: bold;
-    }
+nav {text-align:center;padding:10px;background:#1e293b;}
+nav a {color:white;margin:0 10px;text-decoration:none;}
 
-    .search-box {
-      padding: 10px;
-      text-align: center;
-    }
+.search {text-align:center;padding:10px;}
+.search input {width:90%;padding:10px;border-radius:10px;border:none;}
 
-    input {
-      width: 90%;
-      padding: 10px;
-      border-radius: 10px;
-      border: none;
-      outline: none;
-      font-size: 16px;
-    }
+.categories {display:flex;overflow:auto;padding:10px;gap:10px;}
+.cat {background:#1e293b;padding:8px 15px;border-radius:20px;cursor:pointer;}
+.cat.active {background:#22c55e;color:black;font-weight:bold;}
 
-    .categories {
-      display: flex;
-      overflow-x: auto;
-      gap: 10px;
-      padding: 10px;
-    }
+.container {display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;padding:12px;}
 
-    .cat {
-      background: #1e293b;
-      padding: 8px 15px;
-      border-radius: 20px;
-      cursor: pointer;
-      white-space: nowrap;
-    }
+.card {background:#1e293b;padding:15px;border-radius:15px;}
+button {margin-top:10px;padding:10px;width:100%;border:none;border-radius:10px;background:#22c55e;font-weight:bold;}
 
-    .cat.active {
-      background: #22c55e;
-      color: black;
-      font-weight: bold;
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 12px;
-      padding: 12px;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 15px;
-      border-radius: 15px;
-      transition: 0.2s;
-    }
-
-    .card:hover {
-      transform: scale(1.04);
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 10px;
-      width: 100%;
-      border: none;
-      border-radius: 10px;
-      background: #22c55e;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-  </style>
+footer {text-align:center;padding:20px;background:#020617;margin-top:20px;font-size:14px;color:#aaa;}
+</style>
 </head>
 
 <body>
 
 <header>🔥 Minecraft PvP Packs</header>
 
-<div class="search-box">
-  <input type="text" id="search" placeholder="Search packs...">
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy</a>
+</nav>
+
+<p style="text-align:center;padding:10px;">
+Discover the best Minecraft Bedrock PvP texture packs including crystal PvP, FPS boost packs, and more.
+</p>
+
+<div class="search">
+<input type="text" id="search" placeholder="Search packs...">
 </div>
 
-<div class="categories" id="categories">
-  <div class="cat active" onclick="filterCategory('all')">All</div>
-  <div class="cat" onclick="filterCategory('crystal')">Crystal</div>
-  <div class="cat" onclick="filterCategory('fps')">FPS</div>
-  <div class="cat" onclick="filterCategory('bedwars')">Bedwars</div>
-  <div class="cat" onclick="filterCategory('uhc')">UHC</div>
-  <div class="cat" onclick="filterCategory('skywars')">Skywars</div>
+<div class="categories">
+<div class="cat active" onclick="filterCategory('all')">All</div>
+<div class="cat" onclick="filterCategory('crystal')">Crystal</div>
+<div class="cat" onclick="filterCategory('fps')">FPS</div>
+<div class="cat" onclick="filterCategory('bedwars')">Bedwars</div>
 </div>
 
 <div class="container" id="container"></div>
 
 <script>
+const packs = [];
 
-const packs = [
-{name:"TimeDeo 2k Pack", cat:"pvp"},
-{name:"Dynamic Duo 32x", cat:"pvp"},
-{name:"Bombies 80k", cat:"pvp"},
-{name:"Azura 16x", cat:"pvp"},
-{name:"Crystal PvP Pack", cat:"crystal"},
-{name:"Crystal Lite Pack", cat:"crystal"},
-{name:"FPS Boost Pack", cat:"fps"},
-{name:"Ultra FPS Pack", cat:"fps"},
-{name:"Lite FPS Pack", cat:"fps"},
-{name:"Bedwars Pack", cat:"bedwars"},
-{name:"Bedwars Pro Pack", cat:"bedwars"},
-{name:"UHC Pack", cat:"uhc"},
-{name:"UHC Lite Pack", cat:"uhc"},
-{name:"Skywars Pack", cat:"skywars"},
-{name:"Skywars Pro", cat:"skywars"},
-{name:"Combo PvP Pack", cat:"pvp"},
-{name:"Short Sword Pack", cat:"pvp"},
-{name:"Dark PvP Pack", cat:"pvp"},
-{name:"Fire PvP Pack", cat:"pvp"},
-{name:"Ice PvP Pack", cat:"pvp"},
-{name:"Neon PvP Pack", cat:"pvp"},
-{name:"Pastel PvP Pack", cat:"pvp"},
-{name:"Anime PvP Pack", cat:"pvp"},
-{name:"Realistic PvP Pack", cat:"pvp"},
-{name:"Classic PvP Pack", cat:"pvp"},
-{name:"HD PvP Pack", cat:"pvp"},
-{name:"OG PvP Pack", cat:"pvp"},
-{name:"God PvP Pack", cat:"pvp"},
-{name:"Pro PvP Pack", cat:"pvp"},
-{name:"Minimal PvP Pack", cat:"pvp"},
-{name:"Clean UI Pack", cat:"pvp"},
-{name:"Blue PvP Pack", cat:"pvp"},
-{name:"Red PvP Pack", cat:"pvp"},
-{name:"Green PvP Pack", cat:"pvp"},
-{name:"Galaxy PvP Pack", cat:"pvp"},
-{name:"Obsidian PvP Pack", cat:"pvp"},
-{name:"Ruby PvP Pack", cat:"pvp"},
-{name:"Emerald PvP Pack", cat:"pvp"},
-{name:"Diamond PvP Pack", cat:"pvp"},
-{name:"Night Sky Pack", cat:"pvp"}
-];
+for(let i=1;i<=45;i++){
+  packs.push({
+    name:"PvP Pack "+i,
+    desc:"High quality Minecraft PvP texture pack with smooth FPS and clean visuals for better gameplay.",
+    cat: i%3==0 ? "crystal" : (i%3==1 ? "fps" : "bedwars")
+  });
+}
 
-let currentCategory = "all";
+let current="all";
 
-function displayPacks() {
-  const container = document.getElementById("container");
-  const search = document.getElementById("search").value.toLowerCase();
+function show(){
+  let c=document.getElementById("container");
+  let s=document.getElementById("search").value.toLowerCase();
+  c.innerHTML="";
 
-  container.innerHTML = "";
-
-  packs.forEach(pack => {
-    if ((currentCategory === "all" || pack.cat === currentCategory || pack.cat === "pvp") &&
-        pack.name.toLowerCase().includes(search)) {
-
-      container.innerHTML += `
-        <div class="card">
-          <h3>${pack.name}</h3>
-          <a href="https://mcpedl.com/">
-            <button>Download</button>
-          </a>
-        </div>
-      `;
+  packs.forEach(p=>{
+    if((current==="all"||p.cat===current) && p.name.toLowerCase().includes(s)){
+      c.innerHTML+=`
+      <div class="card">
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <a href="https://mcpedl.com/"><button>Download</button></a>
+      </div>`;
     }
   });
 }
 
-function filterCategory(cat) {
-  currentCategory = cat;
-
-  document.querySelectorAll(".cat").forEach(c => c.classList.remove("active"));
+function filterCategory(cat){
+  current=cat;
+  document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));
   event.target.classList.add("active");
-
-  displayPacks();
+  show();
 }
 
-document.getElementById("search").addEventListener("input", displayPacks);
-
-displayPacks();
-
+document.getElementById("search").addEventListener("input",show);
+show();
 </script>
+
+<footer>
+© 2026 Minecraft PvP Packs | Not affiliated with Mojang
+</footer>
 
 </body>
 </html>
