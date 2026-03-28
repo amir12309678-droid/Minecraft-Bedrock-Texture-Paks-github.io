@@ -6,34 +6,71 @@
 
   <style>
     body {
+      margin: 0;
+      font-family: Arial;
       background: #0f172a;
       color: white;
-      font-family: Arial;
-      margin: 0;
     }
 
-    h1 {
+    header {
+      padding: 15px;
       text-align: center;
-      padding: 20px;
+      background: #020617;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .search-box {
+      padding: 10px;
+      text-align: center;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .categories {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .cat {
+      background: #1e293b;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .cat.active {
+      background: #22c55e;
+      color: black;
+      font-weight: bold;
     }
 
     .container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+      padding: 12px;
     }
 
     .card {
       background: #1e293b;
-      border-radius: 15px;
       padding: 15px;
-      text-align: center;
+      border-radius: 15px;
       transition: 0.2s;
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
     button {
@@ -46,57 +83,112 @@
       font-weight: bold;
       cursor: pointer;
     }
+
   </style>
 </head>
 
 <body>
 
-<h1>🔥 Minecraft PvP Packs 🔥</h1>
+<header>🔥 Minecraft PvP Packs</header>
 
-<div class="container">
-
-<div class="card"><h3>TimeDeo 2k Pack</h3><a href="https://mcpedl.com/?s=timedeo"><button>Download</button></a></div>
-<div class="card"><h3>Dynamic Duo 32x</h3><a href="https://mcpedl.com/?s=dynamic+duo"><button>Download</button></a></div>
-<div class="card"><h3>Bombies 80k Pack</h3><a href="https://mcpedl.com/?s=bombies"><button>Download</button></a></div>
-<div class="card"><h3>Azura 16x</h3><a href="https://mcpedl.com/?s=azura"><button>Download</button></a></div>
-<div class="card"><h3>War v2 Pack</h3><a href="https://mcpedl.com/?s=war+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Dragonfruit PvP</h3><a href="https://mcpedl.com/?s=dragonfruit+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Midnight 16x</h3><a href="https://mcpedl.com/?s=midnight+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Frost 16x</h3><a href="https://mcpedl.com/?s=frost+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Shadow PvP</h3><a href="https://mcpedl.com/?s=shadow+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Blue 16x Pack</h3><a href="https://mcpedl.com/?s=blue+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Red 16x Pack</h3><a href="https://mcpedl.com/?s=red+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Green PvP Pack</h3><a href="https://mcpedl.com/?s=green+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Galaxy 32x</h3><a href="https://mcpedl.com/?s=galaxy+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Obsidian Pack</h3><a href="https://mcpedl.com/?s=obsidian+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Ruby PvP Pack</h3><a href="https://mcpedl.com/?s=ruby+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Emerald PvP Pack</h3><a href="https://mcpedl.com/?s=emerald+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Diamond PvP Pack</h3><a href="https://mcpedl.com/?s=diamond+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Night Sky Pack</h3><a href="https://mcpedl.com/?s=night+sky+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Fire PvP Pack</h3><a href="https://mcpedl.com/?s=fire+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Ice PvP Pack</h3><a href="https://mcpedl.com/?s=ice+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Dark Mode PvP</h3><a href="https://mcpedl.com/?s=dark+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Lite FPS Pack</h3><a href="https://mcpedl.com/?s=fps+boost"><button>Download</button></a></div>
-<div class="card"><h3>Ultra FPS Pack</h3><a href="https://mcpedl.com/?s=low+end"><button>Download</button></a></div>
-<div class="card"><h3>Bedwars Pack</h3><a href="https://mcpedl.com/?s=bedwars"><button>Download</button></a></div>
-<div class="card"><h3>UHC Pack</h3><a href="https://mcpedl.com/?s=uhc"><button>Download</button></a></div>
-<div class="card"><h3>Skywars Pack</h3><a href="https://mcpedl.com/?s=skywars"><button>Download</button></a></div>
-<div class="card"><h3>Crystal PvP Pack</h3><a href="https://mcpedl.com/?s=crystal+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Combo PvP Pack</h3><a href="https://mcpedl.com/?s=combo+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Short Sword Pack</h3><a href="https://mcpedl.com/?s=short+sword"><button>Download</button></a></div>
-<div class="card"><h3>Clean UI Pack</h3><a href="https://mcpedl.com/?s=clean+ui"><button>Download</button></a></div>
-<div class="card"><h3>Minimal PvP Pack</h3><a href="https://mcpedl.com/?s=minimal+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Pro PvP Pack</h3><a href="https://mcpedl.com/?s=pro+pvp"><button>Download</button></a></div>
-<div class="card"><h3>God PvP Pack</h3><a href="https://mcpedl.com/?s=god+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Neon PvP Pack</h3><a href="https://mcpedl.com/?s=neon+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Pastel PvP Pack</h3><a href="https://mcpedl.com/?s=pastel+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Anime PvP Pack</h3><a href="https://mcpedl.com/?s=anime+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Realistic PvP Pack</h3><a href="https://mcpedl.com/?s=realistic+pvp"><button>Download</button></a></div>
-<div class="card"><h3>Classic PvP Pack</h3><a href="https://mcpedl.com/?s=classic+pvp"><button>Download</button></a></div>
-<div class="card"><h3>HD PvP Pack</h3><a href="https://mcpedl.com/?s=hd+pvp"><button>Download</button></a></div>
-<div class="card"><h3>OG PvP Pack</h3><a href="https://mcpedl.com/?s=og+pvp"><button>Download</button></a></div>
-
+<div class="search-box">
+  <input type="text" id="search" placeholder="Search packs...">
 </div>
+
+<div class="categories" id="categories">
+  <div class="cat active" onclick="filterCategory('all')">All</div>
+  <div class="cat" onclick="filterCategory('crystal')">Crystal</div>
+  <div class="cat" onclick="filterCategory('fps')">FPS</div>
+  <div class="cat" onclick="filterCategory('bedwars')">Bedwars</div>
+  <div class="cat" onclick="filterCategory('uhc')">UHC</div>
+  <div class="cat" onclick="filterCategory('skywars')">Skywars</div>
+</div>
+
+<div class="container" id="container"></div>
+
+<script>
+
+const packs = [
+{name:"TimeDeo 2k Pack", cat:"pvp"},
+{name:"Dynamic Duo 32x", cat:"pvp"},
+{name:"Bombies 80k", cat:"pvp"},
+{name:"Azura 16x", cat:"pvp"},
+{name:"Crystal PvP Pack", cat:"crystal"},
+{name:"Crystal Lite Pack", cat:"crystal"},
+{name:"FPS Boost Pack", cat:"fps"},
+{name:"Ultra FPS Pack", cat:"fps"},
+{name:"Lite FPS Pack", cat:"fps"},
+{name:"Bedwars Pack", cat:"bedwars"},
+{name:"Bedwars Pro Pack", cat:"bedwars"},
+{name:"UHC Pack", cat:"uhc"},
+{name:"UHC Lite Pack", cat:"uhc"},
+{name:"Skywars Pack", cat:"skywars"},
+{name:"Skywars Pro", cat:"skywars"},
+{name:"Combo PvP Pack", cat:"pvp"},
+{name:"Short Sword Pack", cat:"pvp"},
+{name:"Dark PvP Pack", cat:"pvp"},
+{name:"Fire PvP Pack", cat:"pvp"},
+{name:"Ice PvP Pack", cat:"pvp"},
+{name:"Neon PvP Pack", cat:"pvp"},
+{name:"Pastel PvP Pack", cat:"pvp"},
+{name:"Anime PvP Pack", cat:"pvp"},
+{name:"Realistic PvP Pack", cat:"pvp"},
+{name:"Classic PvP Pack", cat:"pvp"},
+{name:"HD PvP Pack", cat:"pvp"},
+{name:"OG PvP Pack", cat:"pvp"},
+{name:"God PvP Pack", cat:"pvp"},
+{name:"Pro PvP Pack", cat:"pvp"},
+{name:"Minimal PvP Pack", cat:"pvp"},
+{name:"Clean UI Pack", cat:"pvp"},
+{name:"Blue PvP Pack", cat:"pvp"},
+{name:"Red PvP Pack", cat:"pvp"},
+{name:"Green PvP Pack", cat:"pvp"},
+{name:"Galaxy PvP Pack", cat:"pvp"},
+{name:"Obsidian PvP Pack", cat:"pvp"},
+{name:"Ruby PvP Pack", cat:"pvp"},
+{name:"Emerald PvP Pack", cat:"pvp"},
+{name:"Diamond PvP Pack", cat:"pvp"},
+{name:"Night Sky Pack", cat:"pvp"}
+];
+
+let currentCategory = "all";
+
+function displayPacks() {
+  const container = document.getElementById("container");
+  const search = document.getElementById("search").value.toLowerCase();
+
+  container.innerHTML = "";
+
+  packs.forEach(pack => {
+    if ((currentCategory === "all" || pack.cat === currentCategory || pack.cat === "pvp") &&
+        pack.name.toLowerCase().includes(search)) {
+
+      container.innerHTML += `
+        <div class="card">
+          <h3>${pack.name}</h3>
+          <a href="https://mcpedl.com/">
+            <button>Download</button>
+          </a>
+        </div>
+      `;
+    }
+  });
+}
+
+function filterCategory(cat) {
+  currentCategory = cat;
+
+  document.querySelectorAll(".cat").forEach(c => c.classList.remove("active"));
+  event.target.classList.add("active");
+
+  displayPacks();
+}
+
+document.getElementById("search").addEventListener("input", displayPacks);
+
+displayPacks();
+
+</script>
 
 </body>
 </html>
